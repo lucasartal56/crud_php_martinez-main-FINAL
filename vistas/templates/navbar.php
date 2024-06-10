@@ -20,7 +20,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-file-person me-2"></i>APLICACIONES
+          <i class="bi bi-app"></i></i>APLICACIONES
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="../../vistas/aplicacion/index.php"><i class="bi bi-plus-circle me-2"></i>CREAR</a></li>
@@ -29,7 +29,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-file-person me-2"></i>ASIGNAR APPS A PROGRAMADORES
+          <i class="bi bi-segmented-nav"></i>ASIGNAR APPS A PROGRAMADORES
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="../../vistas/asignacion/index.php"><i class="bi bi-plus-circle me-2"></i>ASIGNAR</a></li>
@@ -38,7 +38,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-file-person me-2"></i>ASIGNAR TAREAS A APPS
+          <i class="bi bi-menu-app-fill"></i>ASIGNAR TAREAS A APPS
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="../../vistas/tarea/index.php"><i class="bi bi-plus-circle me-2"></i>ASIGNAR TAREA</a></li>

@@ -41,7 +41,7 @@
 
 <div class="hero-section">
     <div class="hero-content">
-        <h1 class="hero-title">Bienvenidos a Software Solutions</h1>
+        <h1 class="hero-title">Bienvenidos a la Compañía de Ingeniería de Software</h1>
         <p class="hero-subtitle">Innovando el futuro de la tecnología</p>
     </div>
 </div>
