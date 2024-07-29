@@ -3,23 +3,23 @@ require_once 'Conexion.php';
 
 class Asignacion extends Conexion{
     public $asig_id;
-    public $asig_pro_id;
-    public $asig_ap_id;    
+    public $as_programador;
+    public $as_aplicacion;    
     public $asig_situacion;
 
 
     public function __construct($args = [])
     {
         $this->asig_id = $args['asig_id'] ?? null;
-        $this->asig_pro_id = $args['asig_pro_id'] ?? 0;
-        $this->asig_ap_id = $args['asig_ap_id'] ?? 0;
+        $this->as_programador = $args['as_programador'] ?? 0;
+        $this->as_aplicacion = $args['as_aplicacion'] ?? 0;
         $this->asig_situacion = $args['asig_situacion'] ?? '';
     }
 
       // METODO PARA INSERTAR
       public function guardar(){
-        $sql = "INSERT into asignacion (asig_pro_id, asig_ap_id) 
-        values ('$this->asig_pro_id', '$this->asig_ap_id')";
+        $sql = "INSERT into asignacion (as_programador, as_aplicacion) 
+        values ('$this->as_programador', '$this->as_aplicacion')";
 
         //  var_dump($sql);
         //  exit;
@@ -42,15 +42,15 @@ class Asignacion extends Conexion{
         $sql = "SELECT $cols FROM asignacion where asig_situacion = 1 ";
 
 
-        if($this->asig_pro_id != ''){
-            $sql .= " AND asig_pro_id like '%$this->asig_pro_id%' ";
+        if($this->as_programador != ''){
+            $sql .= " AND as_programador like '%$this->as_programador%' ";
         }
         $resultado = self::servir($sql);
         return $resultado;
     }
 
     public function MostrarAsignacion(){
-        $sql = "SELECT asig_id, pro_nombre || ' ' || pro_apellido AS nombre_completo, ap_nombre FROM asignacion INNER JOIN programador ON asig_pro_id = pro_id INNER JOIN aplicacion ON asig_ap_id = ap_id WHERE asig_situacion = 1";
+        $sql = "SELECT asig_id, pro_nombre || ' ' || pro_apellido AS nombre_completo, ap_nombre FROM asignacion INNER JOIN programador ON as_programador = pro_id INNER JOIN aplicacion ON as_aplicacion = ap_id WHERE asig_situacion = 1";
 
         $resultado = self::servir($sql);
         return $resultado;
@@ -66,7 +66,7 @@ class Asignacion extends Conexion{
     }
 
     public function modificar(){
-        $sql = "UPDATE asignacion SET asig_pro_id = '$this->asig_pro_id', asig_ap_id = '$this->asig_ap_id'
+        $sql = "UPDATE asignacion SET as_programador = '$this->as_programador', as_aplicacion = '$this->as_aplicacion'
          WHERE asig_id = $this->asig_id ";
      
         // var_dump($sql);

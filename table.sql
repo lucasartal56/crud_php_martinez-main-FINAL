@@ -18,14 +18,24 @@ CREATE TABLE aplicacion (
 );
 
 
-CREATE TABLE asignacion (
-    asig_id SERIAL NOT NULL,
-    asig_pro_id INTEGER NOT NULL,
-    asig_ap_id INTEGER NOT NULL,
-    asig_situacion SMALLINT DEFAULT 1,
-    PRIMARY KEY (asig_id),
-    FOREIGN KEY (asig_pro_id) REFERENCES programador (pro_id),
-    FOREIGN KEY (asig_ap_id) REFERENCES aplicacion (ap_id)
+
+CREATE TABLE asignaciones (
+    as_id SERIAL,
+    as_pro_id INTEGER,
+    as_ap_id INTEGER,
+    as_situacion SMALLINT DEFAULT 1,
+    PRIMARY KEY (as_id),
+    FOREIGN KEY (as_pro_id) REFERENCES programadores (pro_id),
+    FOREIGN KEY (as_ap_id) REFERENCES aplicaciones (ap_id)
+);
+
+
+
+CREATE TABLE aplicaciones (
+    ap_id SERIAL PRIMARY KEY,
+    ap_nombre VARCHAR (30),
+    ap_descripcion VARCHAR (50),
+    ap_situacion SMALLINT DEFAULT 1
 );
 
 CREATE TABLE tarea (

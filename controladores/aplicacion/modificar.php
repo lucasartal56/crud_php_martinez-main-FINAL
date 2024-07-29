@@ -29,7 +29,7 @@ if ($_POST['ap_nombre'] == '' || $_POST['ap_descripcion'] == '') {
         // REALIZAR CONSULTA
         $aplicacion = new Aplicacion($_POST);
 
-        433
+        
         $modificar = $aplicacion->modificar();
 
         $resultado = [
